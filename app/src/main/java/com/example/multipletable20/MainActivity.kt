@@ -1,5 +1,6 @@
 package com.example.multipletable20
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +23,12 @@ class MainActivity : AppCompatActivity() {
         // added a listener to get notified when the listener is clicked
         calcbutton.setOnClickListener {
 
-            // made a variable 
+            // made a variable to function the switch between the pages (activities)
+            val intent= Intent (packageContext = this, cIs = TablesActivity :: class.java)
+
+            intent.putExtra("tableNumber",numberInput.text.toString())
+            //this close the current page and opens the new page (Multiplication Table)
+            startActivity(intent)
         }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -30,4 +36,5 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
+
 }
