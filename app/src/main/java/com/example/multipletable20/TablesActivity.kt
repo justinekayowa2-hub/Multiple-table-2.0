@@ -21,7 +21,7 @@ class TablesActivity : AppCompatActivity() {
         val tableNumber = tableString?. toInt()
 
         //display the heading so we can see the value in action
-        val multipleTable = findViewById<TextView>(R.id.multiplyTableTextView)
+        val multipleTable = findViewById<TextView>(R.id.multipleTableTextView)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
